@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "title": "Review quarterly reports",
+    "completed": false,
+    "categoryId": 1,
+    "dueDate": "2024-01-15",
+    "priority": 3,
+    "createdAt": "2024-01-10T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "Id": 2,
+    "title": "Prepare presentation for client meeting",
+    "completed": false,
+    "categoryId": 1,
+    "dueDate": "2024-01-14",
+    "priority": 5,
+    "createdAt": "2024-01-10T10:30:00.000Z",
+    "completedAt": null
+  },
+  {
+    "Id": 3,
+    "title": "Call dentist for appointment",
+    "completed": false,
+    "categoryId": 3,
+    "dueDate": "2024-01-16",
+    "priority": 2,
+    "createdAt": "2024-01-10T11:15:00.000Z",
+    "completedAt": null
+  },
+  {
+    "Id": 4,
+    "title": "Buy groceries",
+    "completed": true,
+    "categoryId": 2,
+    "dueDate": "2024-01-12",
+    "priority": 1,
+    "createdAt": "2024-01-10T08:00:00.000Z",
+    "completedAt": "2024-01-12T16:45:00.000Z"
+  },
+  {
+    "Id": 5,
+    "title": "Read chapter 5 of JavaScript book",
+    "completed": false,
+    "categoryId": 4,
+    "dueDate": "2024-01-18",
+    "priority": 3,
+    "createdAt": "2024-01-10T14:20:00.000Z",
+    "completedAt": null
+  },
+  {
+    "Id": 6,
+    "title": "Fix leaky faucet",
+    "completed": false,
+    "categoryId": 5,
+    "dueDate": "2024-01-20",
+    "priority": 4,
+    "createdAt": "2024-01-10T16:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "Id": 7,
+    "title": "Team standup meeting",
+    "completed": true,
+    "categoryId": 1,
+    "dueDate": "2024-01-11",
+    "priority": 2,
+    "createdAt": "2024-01-10T17:30:00.000Z",
+    "completedAt": "2024-01-11T09:15:00.000Z"
+  },
+  {
+    "Id": 8,
+    "title": "Plan weekend hiking trip",
+    "completed": false,
+    "categoryId": 2,
+    "dueDate": "2024-01-17",
+    "priority": 1,
+    "createdAt": "2024-01-10T19:45:00.000Z",
+    "completedAt": null
+  }
+]

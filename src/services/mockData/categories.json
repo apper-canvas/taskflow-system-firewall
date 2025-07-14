@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "name": "Work",
+    "color": "#6366F1",
+    "icon": "Briefcase"
+  },
+  {
+    "Id": 2,
+    "name": "Personal",
+    "color": "#EC4899",
+    "icon": "User"
+  },
+  {
+    "Id": 3,
+    "name": "Health",
+    "color": "#10B981",
+    "icon": "Heart"
+  },
+  {
+    "Id": 4,
+    "name": "Learning",
+    "color": "#F59E0B",
+    "icon": "BookOpen"
+  },
+  {
+    "Id": 5,
+    "name": "Home",
+    "color": "#8B5CF6",
+    "icon": "Home"
+  }
+]

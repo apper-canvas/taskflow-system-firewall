@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* React Toastify Styles */
+@import 'react-toastify/dist/ReactToastify.css';
+
+/* Custom Toast Overrides */
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__toast {
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  min-height: 48px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.Toastify__toast--success {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.Toastify__toast--error {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.Toastify__toast--warning {
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.Toastify__toast--info {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.Toastify__progress-bar {
+  background: linear-gradient(90deg, #8B5CF6, #EC4899);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0F172A;
+  color: #f1f5f9;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8B5CF6, #EC4899);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7C3AED, #DB2777);
+}
+
+/* Drag and Drop Styles */
+.drag-over {
+  border: 2px dashed #8B5CF6;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+}
+
+/* Completion Animation */
+@keyframes completion-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.completion-animation {
+  animation: completion-pulse 0.3s ease-out;
+}
+
+/* Priority Pills */
+.priority-pill {
+  position: relative;
+  overflow: hidden;
+}
+
+.priority-pill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.priority-pill:hover::before {
+  transform: translateX(100%);
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #8B5CF6, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button Hover Effects */
+.btn-gradient {
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  transition: all 0.2s ease-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #5B21B6, #7C2D92);
+  transform: scale(1.02);
+}
+
+/* Form Focus Ring */
+.focus-ring:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: rgba(139, 92, 246, 0.5);
+  border-color: #8B5CF6;
+}
+
+/* Checkbox Animation */
+.checkbox-animation {
+  transition: all 0.2s ease-out;
+}
+
+.checkbox-animation:checked {
+  background: linear-gradient(135deg, #10B981, #059669);
+  transform: scale(1.1);
+}
+
+/* Shake Animation for Errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.shake-animation {
+  animation: shake 0.5s ease-in-out;
+}
