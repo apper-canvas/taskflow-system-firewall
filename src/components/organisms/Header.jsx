@@ -5,7 +5,7 @@ import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
 import { useCategories } from "@/hooks/useCategories";
 
-const Header = ({ onToggleSidebar, onAddTask }) => {
+const Header = ({ onToggleSidebar, onAddTask, onAddCategory }) => {
   const { categoryId } = useParams();
   const { categories } = useCategories();
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -90,6 +90,15 @@ const Header = ({ onToggleSidebar, onAddTask }) => {
                 })}
               </p>
             </div>
+            
+<Button
+              variant="secondary"
+              onClick={onAddCategory}
+              className="shadow-elevation"
+            >
+              <ApperIcon name="FolderPlus" size={16} className="mr-2" />
+              <span className="hidden sm:inline">Add Category</span>
+            </Button>
             
             <Button
               variant="primary"

@@ -28,6 +28,13 @@ const Layout = () => {
               window.dispatchEvent(event);
             }
           }}
+          onAddCategory={() => {
+            // This will be handled by the page component
+            if (typeof window !== 'undefined' && window.CustomEvent) {
+              const event = new window.CustomEvent('addCategory');
+              window.dispatchEvent(event);
+            }
+          }}
         />
         <main className="flex-1 overflow-y-auto">
           <div className="p-6">
