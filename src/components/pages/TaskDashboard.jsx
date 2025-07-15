@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import TaskList from "@/components/organisms/TaskList";
 import TaskModal from "@/components/molecules/TaskModal";
+import CategoryModal from "@/components/molecules/CategoryModal";
 import { useTasks } from "@/hooks/useTasks";
 import { useCategories } from "@/hooks/useCategories";
 
 const TaskDashboard = () => {
   const { categoryId } = useParams();
-  const { categories } = useCategories();
+const categories = useCategories();
   const {
     tasks,
     loading,
@@ -20,19 +21,28 @@ const TaskDashboard = () => {
     refetch
   } = useTasks(categoryId ? parseInt(categoryId) : null);
 
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
 
-  // Listen for add task events from header
+  // Listen for add task and add category events from header
   useEffect(() => {
     const handleAddTask = () => {
       setIsAddModalOpen(true);
     };
 
+    const handleAddCategory = () => {
+      setIsCategoryModalOpen(true);
+    };
+
     window.addEventListener('addTask', handleAddTask);
-    return () => window.removeEventListener('addTask', handleAddTask);
+    window.addEventListener('addCategory', handleAddCategory);
+    return () => {
+      window.removeEventListener('addTask', handleAddTask);
+      window.removeEventListener('addCategory', handleAddCategory);
+    };
   }, []);
 
-  const handleAddTask = async (taskData) => {
+const handleAddTask = async (taskData) => {
     try {
       await addTask(taskData);
       setIsAddModalOpen(false);
@@ -41,7 +51,16 @@ const TaskDashboard = () => {
     }
   };
 
-  const category = categories.find(cat => cat.Id === parseInt(categoryId));
+  const handleAddCategory = async (categoryData) => {
+    try {
+      await categories.addCategory(categoryData);
+      setIsCategoryModalOpen(false);
+    } catch (error) {
+      console.error("Failed to add category:", error);
+    }
+  };
+
+const category = categories.categories.find(cat => cat.Id === parseInt(categoryId));
 
   return (
     <motion.div
@@ -61,10 +80,16 @@ const TaskDashboard = () => {
         onRefresh={refetch}
       />
 
-      <TaskModal
+<TaskModal
         isOpen={isAddModalOpen}
         onClose={() => setIsAddModalOpen(false)}
         onSubmit={handleAddTask}
+      />
+
+      <CategoryModal
+        isOpen={isCategoryModalOpen}
+        onClose={() => setIsCategoryModalOpen(false)}
+        onSubmit={handleAddCategory}
       />
     </motion.div>
   );
